@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Charli wants rainbows and clouds that smile</title>
+
+    <style>
+      *, *::before, *::after {
+        box-sizing: border-box;
+      }
+
+      html, body {
+        margin: 0;
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      body {
+        background: linear-gradient(to bottom, lightblue 40%, dodgerblue);
+      }
+
+      .rainbow {
+        position: absolute;
+        bottom: -50vmin;
+        left: -25vmax;
+
+        width: 50vmax;
+        height: 80vmin;
+
+        border-radius: 100%;
+
+        transform: rotate(70deg);
+        filter: blur(20px);
+
+        opacity: 0.6;
+
+        box-shadow: 0 0 0 2rem violet,
+          0 -1rem 0 2.25rem indigo,
+          0 -2rem 0 2.5rem dodgerblue,
+          0 -3rem 0 2.75rem mediumseagreen,
+          0 -4rem 0 3rem gold,
+          0 -5rem 0 3.25rem orange,
+          0 -6rem 0 3.5rem crimson;
+
+        z-index: 10;
+      }
+
+      .cloud {
+        animation: float 90s linear infinite;
+        background-color: white;
+        border-radius: 9999px;
+        height: 5rem;
+        width: 15rem;
+        position: absolute;
+        margin: 5rem;
+        z-index: 15;
+
+        text-align: center;
+        opacity: 0.7;
+        font-size: 3rem;
+      }
+      .cloud::before {
+        content: "";
+        background-color: white;
+        border-radius: 9999px;
+        position: absolute;
+        top: -1.5rem;
+        right: 2rem;
+        width: 7rem;
+        height: 7rem;
+        z-index: -1;
+      }
+      .cloud::after {
+        content: "";
+        background-color: white;
+        border-radius: 9999px;
+        position: absolute;
+        top: -2.5rem;
+        left: 1rem;
+        width: 9rem;
+        height: 9rem;
+        z-index: -1;
+      }
+
+      .cloud.size-2 {
+        animation: float 60s linear infinite;
+        transform: scale(1.2);
+
+        z-index: 20;
+      }
+      .cloud.size-3 {
+        animation: float 120s linear infinite;
+        transform: scale(0.7);
+
+        z-index: 5;
+      }
+      .cloud.size-4 {
+        animation: float 150s linear infinite;
+        transform: scale(0.5);
+        z-index: 1;
+      }
+      .cloud.flip {
+        transform: scaleX(-1);
+      }
+      .cloud.size-2.flip {
+        transform: scale(1.2) scaleX(-1);
+      }
+      .cloud.size-3.flip {
+        transform: scale(0.7) scaleX(-1);
+      }
+      .cloud.size-4.flip {
+        transform: scale(0.5) scaleX(-1);
+      }
+
+      .cloud:nth-of-type(n + 1) {
+        top: 3rem;
+        left: -50%;
+      }
+      .cloud:nth-of-type(n + 2) {
+        top: 6rem;
+        left: -80%;
+      }
+      .cloud:nth-of-type(n + 3) {
+        top: 9rem;
+        left: -100%;
+      }
+      .cloud:nth-of-type(n + 4) {
+        top: 12rem;
+        left: -95%;
+      }
+      .cloud:nth-of-type(n + 5) {
+        top: 15rem;
+        left: -125%;
+      }
+      .cloud:nth-of-type(n + 6) {
+        top: 18rem;
+        left: -25%;
+      }
+
+      @keyframes float {
+        100% {
+          left: 150vw;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="rainbow"></div>
+    <div class="cloud">😊</div>
+    <div class="cloud size-2">😇</div>
+    <div class="cloud size-3">🤪</div>
+    <div class="cloud flip">🥸</div>
+    <div class="cloud size-4">😶‍🌫️</div>
+    <div class="cloud size-3 flip">😎</div>
+  </body>
+</html>
